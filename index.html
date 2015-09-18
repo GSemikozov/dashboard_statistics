@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>Гроші до зарплати</title>
+    <script>
+        function getCookie(name) {
+            var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+
+        if( (window.devicePixelRatio===undefined?1:window.devicePixelRatio)>1 && !getCookie('HTTP_IS_RETINA')) {
+            document.cookie='HTTP_IS_RETINA=1;path=/';
+            location.reload();
+        }
+    </script>
+    <link href="css/reset.css" media="screen" rel="stylesheet" />
+    <link href="css/jquery.nouislider.css" media="screen" rel="stylesheet" />
+    <link href="css/slick.css" media="screen" rel="stylesheet" />
+    <link href="css/jquery-ui.css" media="screen" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox.css" media="all" />
+    <link href="css/style.css" media="screen" rel="stylesheet" />
+    <link href="css/dashboard.css" media="screen" rel="stylesheet" />
+    <!-- <link href="favicon.ico" rel="icon"  type="image/png" />  -->
+
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,500,700,300italic&subset=latin,cyrillic"  rel="stylesheet" type="text/css">
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+</head>
+<body class="<?php if ($act == 'login' || $act == 'partners') echo $act; if ($act == '404') echo 'compact';?>">
+<div class="wrapper dashboardWrapper">
+    <header class="header">
+        <div class="mbox">
+            <div class="headerTop">
+                <div class="headerTopRow">
+                    <div class="headerTopCol headerAccountDashboard">
+                        <div class="userData clearfix">
+                            <a href="" class="userName"><i class="if if-user"></i> Антон Валерьевич</a>
+                            <div class="userSettings">
+                                <a href="#" class="">Настройки профиля</a>|
+                                <a href="#" class="">Выйти</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="headerTopCol headerLogoDashboard">
+                        <p>Срочный микрозайм онлайн до зарплаты</p>
+                        <span class="logo">ГРОШІ ДО ЗАРПЛАТИ</span>
+                    </div>
+                    <div class="headerTopCol headerContacts">
+                        <span class="phone"><i class="if if-phone"></i>8 800 123 456</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="mbox">
+            <div class="sidebar">
+                <?php
+                    $sidebar2 = array('dashboard');
+
+                if ( in_array($act , $sidebar2) ) { ?>
+                <ul class="sidebarMenu">
+                    <li><a href="" class="sidebarMenuLink active"><span>Расчеты</span></a></li>
+                    <li><a href="#" class="sidebarMenuLink"><span>Статистика</span></a></li>
+                    <li><a href="" class="sidebarMenuLink"><span>Кредитный отчет</span></a></li>
+                    <li><a href="" class="sidebarMenuLink"><span>Смена пароля</span></a></li>
+                    <li><a href="" class="sidebarMenuLink"><span>Акции</span></a></li>
+                    <li><a href="" class="sidebarMenuLink"><span>Вопросы и ответы</span></a></li>
+                </ul>
+                <ul class="sidebarMenu sidebarMenuForm">
+                    <li>
+                        <div class="formRow">
+                            <i class="icon"><img src="images/tv.png" alt=""></i>
+                            <p class="registrationElemHeading">Статистика</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="formRow">
+                            <div class="registrationCol">
+                                <div class="registrationElemTitle"><i class="icon"><img src="images/link.png" alt=""></i>Реферальная ссылка</div>
+                                <div class="formInput">
+                                    <input type="text" required />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="formRow">
+                            <div class="registrationCol">
+                                <div class="registrationElemTitle"><i class="icon"><img src="images/barcode.png" alt=""></i>Промокод</div>
+                                <div class="formInput">
+                                    <input type="text" required />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="sidebarMenu sidebarMenuForm">
+                    <div class="formRow">
+                        <div class="registrationCol">
+                            <div class="registrationElemTitle"><i class="icon"><img src="images/envelope.png" alt=""></i>Служба поддержки</div>
+                            <div class="formInput">
+                                <textarea class="formInputTextarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="button formInputButton">Отправить</a>
+                </div>
+                <?php } ?>
+            </div>
+            <div class="content">
+                <div class="article">
+                    <h1 class="articleHeading mainheading">Статистика</h1>
+                    <div class="statisticsTableWrap">
+                        <header class="statisticsTableHeader">
+                            <div class="statisticsTableTitle">Статистика</div>
+                            <div class="registrationCol">
+                                <div class="formInput formInputDatepicker">
+                                    <div class="datepicker-wrap">
+                                        <input type="text" class="datepicker" required name="is_date" />
+                                        <span class="datepicker-placeholder datepickerDevider">21.01.2015</span>
+                                    </div>
+                                    <div class="datepicker-wrap">
+                                        <input type="text" class="datepicker" required name="is_date" />
+                                        <span class="datepicker-placeholder">22.01.2015</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                        <table class="statisticsTable">
+                            <thead>
+                            <tr>
+                                <th width="33%">Тип</th>
+                                <th width="34%">Статус</th>
+                                <th width="33%">Клиент</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-wrap">
+                                            <label>
+                                                <input type="checkbox">
+                                                <i class="checkbox if if-checkbox"></i>
+                                                <span>Веб-интерфейс</span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox-wrap">
+                                            <label>
+                                                <input type="checkbox">
+                                                <i class="checkbox if if-checkbox"></i>
+                                                <span>Выдано</span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox-wrap">
+                                            <label>
+                                                <input type="checkbox">
+                                                <i class="checkbox if if-checkbox"></i>
+                                                <span>Новый</span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-wrap">
+                                            <label>
+                                                <input type="checkbox">
+                                                <i class="checkbox if if-checkbox"></i>
+                                                <span>Реферальная ссылка</span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox-wrap">
+                                            <label>
+                                                <input type="checkbox">
+                                                <i class="checkbox if if-checkbox"></i>
+                                                <span>Отказано</span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox-wrap">
+                                            <label>
+                                                <input type="checkbox">
+                                                <i class="checkbox if if-checkbox"></i>
+                                                <span>Повторный</span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-wrap">
+                                            <label>
+                                                <input type="checkbox">
+                                                <i class="checkbox if if-checkbox"></i>
+                                                <span>Промокод</span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox-wrap">
+                                            <label>
+                                                <input type="checkbox">
+                                                <i class="checkbox if if-checkbox"></i>
+                                                <span>Не решено</span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><a href="#" class="button tableBtn">показать</a></td>
+                                    <td>Результатов: <span class="searchResult">4</span></td>
+                                    <td><span class="loadDoc"><img src="images/load-doc.png" alt="" class="searchResultIcon">Скачать отчет</span></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="articleTableWrap">
+                        <table class="articleTable">
+                            <thead>
+                            <tr>
+                                <th width="17%">Дата</th>
+                                <th width="17%">Статус</th>
+                                <th width="32%">Клиент</th>
+                                <th width="17%">Сумма, грн.</th>
+                                <th width="17%">Тип</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>27.10.2014<br><span class="time">17:16</span></td>
+                                <td>Выдан</td>
+                                <td></td>
+                                <td>2500</td>
+                                <td><img src="images/doc.png" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td>27.10.2014<br><span class="time">17:16</span></td>
+                                <td>Выдан</td>
+                                <td></td>
+                                <td>2500</td>
+                                <td><img src="images/doc.png" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td>27.10.2014<br><span class="time">17:16</span></td>
+                                <td>Выдан</td>
+                                <td></td>
+                                <td>2500</td>
+                                <td><img src="images/doc.png" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td>27.10.2014<br><span class="time">17:16</span></td>
+                                <td>Выдан</td>
+                                <td></td>
+                                <td>2500</td>
+                                <td><img src="images/doc.png" alt=""></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="mbox">
+            <div class="footerBottom">
+                <div class="copyright">© 2015 <a href="#" class="copyrightLink">Groshi</a>, торговая марка ООО «Groshi»</div>
+                <div class="footerBottomRight"><img src="images/t_counter.jpg" alt=""></div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.nouislider.all.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/maskedinput-1.4.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="fancybox/jquery.fancybox.js" type="text/javascript"></script>
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+</div>
+</body>
+</html>
